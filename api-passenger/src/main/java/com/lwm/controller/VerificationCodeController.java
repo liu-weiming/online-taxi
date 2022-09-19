@@ -15,7 +15,7 @@ public class VerificationCodeController {
     @GetMapping("/verification-code")
     public String verificationCode(@RequestBody VerificationCodeDTO dto) {
         //generate verification code
-
+        System.out.println("Received passengerPhone is: " + dto.getPassengerPhone());
         //send to third party message provider
 
         //redis cache

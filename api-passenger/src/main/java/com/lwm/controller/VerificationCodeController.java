@@ -5,6 +5,7 @@ import com.lwm.http.ResponseResult;
 import com.lwm.service.IVerificationCodeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,6 +24,11 @@ public class VerificationCodeController {
         System.out.println("Received passengerPhone is: " + dto.getPassengerPhone());
 
         return verificationCodeService.generateCode(dto.getPassengerPhone());
+    }
+
+    @PostMapping("/verify")
+    public ResponseResult<?> verify(@RequestBody VerificationCodeDTO dto) {
+        return ResponseResult.status(verificationCodeService.verify(dto));
     }
 
 }

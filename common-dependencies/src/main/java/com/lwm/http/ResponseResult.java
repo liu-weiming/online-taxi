@@ -44,6 +44,10 @@ public class ResponseResult<T> implements Serializable {
         return new ResponseResult<T>().setCode(code).setMsg(msg);
     }
 
+    public static <T> ResponseResult<T> status(boolean success) {
+        return new ResponseResult<T>().setCode(success ? ResponseStatusEnum.OK.getCode() : ResponseStatusEnum.FAIL.getCode());
+    }
+
     public boolean isSuccess() {
         return code == ResponseStatusEnum.OK.getCode();
     }

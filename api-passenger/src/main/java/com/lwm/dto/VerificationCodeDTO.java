@@ -1,25 +1,16 @@
 package com.lwm.dto;
 
+import lombok.Data;
+
 /**
  * @author weeming
  * @date 2022/9/17 15:55
  */
+@Data
 public class VerificationCodeDTO {
 
     private String passengerPhone;
 
-    public String getPassengerPhone() {
-        return passengerPhone;
-    }
+    private String code;
 
-    public void setPassengerPhone(String passengerPhone) {
-        this.passengerPhone = passengerPhone;
-    }
-
-    @Override
-    public String toString() {
-        return "VerificationCodeDTO{" +
-                "passengerPhone='" + passengerPhone + '\'' +
-                '}';
-    }
 }

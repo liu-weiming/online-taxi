@@ -1,5 +1,6 @@
 package com.lwm.service;
 
+import com.lwm.dto.VerificationCodeDTO;
 import com.lwm.http.ResponseResult;
 
 /**
@@ -13,4 +14,11 @@ public interface IVerificationCodeService {
      * @return 验证码
      */
     ResponseResult<?> generateCode(String passengerPhone);
+
+    /**
+     * 校验验证码
+     * @param dto 手机号验证码
+     * @return 是否校验成功
+     */
+    boolean verify(VerificationCodeDTO dto);
 }
